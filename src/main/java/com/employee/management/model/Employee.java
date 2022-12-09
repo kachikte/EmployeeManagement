@@ -22,19 +22,22 @@ public class Employee {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    private String userName;
+
     private String firstName;
     private String lastName;
     private int age;
     private String address;
     private String level;
 
-    @OneToMany(mappedBy = "medication", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "employee", fetch = FetchType.EAGER)
     @JsonManagedReference
     @Nullable
     private List<EmployeeImage> employeeImageList;
 
 
     public Employee(EmployeeDto employeeDto) {
+        this.userName = employeeDto.getUserName();
         this.firstName = employeeDto.getFirstName();
         this.lastName = employeeDto.getLastName();
         this.age = employeeDto.getAge();

@@ -23,8 +23,16 @@ public class EmployeeController {
     public ResponseEntity<EMResponseEntity> addEmployees(@RequestBody EmployeeDto employeeDto) throws Exception {
 
         EmployeePojo employeePojo = employeeService.addEmployee(employeeDto);
-        EMResponseEntity dmResponseEntity = new EMResponseEntity(EMResponseCode.SUCCESS, EMResponseMessage.SUCCESS_MESSAGE, employeePojo);
-        return  ResponseEntity.ok(dmResponseEntity);
+
+        EMResponseEntity emResponseEntity;
+
+        if (employeePojo == null) {
+            emResponseEntity = new EMResponseEntity(EMResponseCode.BAD_REQUEST, EMResponseMessage.BAD_REQUEST_MESSAGE, employeePojo);
+        } else {
+            emResponseEntity = new EMResponseEntity(EMResponseCode.SUCCESS, EMResponseMessage.SUCCESS_MESSAGE, employeePojo);
+
+        }
+        return  ResponseEntity.ok(emResponseEntity);
     }
 
     @GetMapping("/get/{employeeId}")
@@ -39,8 +47,16 @@ public class EmployeeController {
     public ResponseEntity<EMResponseEntity> updateEmployees(@PathVariable long employeeId, @RequestBody EmployeeDto employeeDto) throws Exception {
 
         EmployeePojo employeePojo = employeeService.updateEmployee(employeeId, employeeDto);
-        EMResponseEntity dmResponseEntity = new EMResponseEntity(EMResponseCode.SUCCESS, EMResponseMessage.SUCCESS_MESSAGE, employeePojo);
-        return  ResponseEntity.ok(dmResponseEntity);
+
+        EMResponseEntity emResponseEntity;
+
+        if (employeePojo == null) {
+            emResponseEntity = new EMResponseEntity(EMResponseCode.BAD_REQUEST, EMResponseMessage.BAD_REQUEST_MESSAGE, employeePojo);
+        } else {
+            emResponseEntity = new EMResponseEntity(EMResponseCode.SUCCESS, EMResponseMessage.SUCCESS_MESSAGE, employeePojo);
+
+        }
+        return  ResponseEntity.ok(emResponseEntity);
     }
 
     @DeleteMapping("/delete/{employeeId}")

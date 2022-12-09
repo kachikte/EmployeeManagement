@@ -15,6 +15,8 @@ import java.util.List;
 public class EmployeePojo {
 
     private long id;
+
+    private String userName;
     private String firstName;
     private String lastName;
     private int age;
@@ -25,6 +27,7 @@ public class EmployeePojo {
 
     public EmployeePojo(Employee employee) {
         this.id = employee.getId();
+        this.userName = employee.getUserName();
         this.firstName = employee.getFirstName();
         this.lastName = employee.getLastName();
         this.age = employee.getAge();

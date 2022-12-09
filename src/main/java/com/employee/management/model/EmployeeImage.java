@@ -29,14 +29,14 @@ public class EmployeeImage {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JsonBackReference
-    @JoinColumn(name = "medication_id", referencedColumnName = "id")
-    private Employee medication;
+    @JoinColumn(name = "employee_id", referencedColumnName = "id")
+    private Employee employee;
 
-    public EmployeeImage(String fileName, String fileType, long fileSize, byte[] data, Employee medication) {
+    public EmployeeImage(String fileName, String fileType, long fileSize, byte[] data, Employee employee) {
         this.fileName = fileName;
         this.fileType = fileType;
         this.fileSize = fileSize;
         this.data = data;
-        this.medication = medication;
+        this.employee = employee;
     }
 }
