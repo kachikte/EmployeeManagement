@@ -1,6 +1,6 @@
 THIS IS THE README FILE THAT DESCRIBES THE OPERATION OF THE "Employee Management" PROJECT
 
-1. Clone the repository using the command - git clone https://github.com/kachikte/EmployeeManagement.git or git@github.com:kachikte/EmployeeManagement.git and checkout into main branch
+1. Clone the repository using the command - git clone https://github.com/kachikte/EmployeeManagement.git or git@github.com:kachikte/EmployeeManagement.git and checkout into apis branch
 2. run - mvn clean
 3. run - mvn install
 4. Make sure the dependencies have been resolved
