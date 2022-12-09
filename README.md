@@ -6,6 +6,7 @@ THIS IS THE README FILE THAT DESCRIBES THE OPERATION OF THE "Employee Management
 4. Make sure the dependencies have been resolved
 5. Run the application from your IDE
 6. Make sure the project is running on localhost:7070
+7. The API documentation is available at: https://documenter.getpostman.com/view/8494822/2s8YzS14Fq
 The APIs should be called in the following order:
 
 a. addEmployees - to add an employee.
